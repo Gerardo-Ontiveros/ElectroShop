@@ -1,6 +1,9 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
+import { DarkTheme, LightTheme } from "@react-navigation/native";
 import React, { useMemo, useState } from "react";
+import { AppContext } from "@context/AppContext";
+import { TabNavigator } from "@routes/screens.routing";
+import { StatusBar } from "expo-status-bar";
 
 export default function App() {
   const [isDarkTheme, setIsDarkTheme] = useState(false);
@@ -12,16 +15,8 @@ export default function App() {
     <NavigationContainer theme={isDarkTheme ? DarkTheme : LightTheme}>
       <AppContext.Provider value={appContext}>
         <TabNavigator />
+        <StatusBar style={isDarkTheme ? "light" : "dark"} />
       </AppContext.Provider>
     </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
