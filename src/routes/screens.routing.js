@@ -1,8 +1,8 @@
 import React from "react";
-import { Home } from "@screens/Home";
+import Home from "@screens/Home";
 import ProductList from "@screens/ProductList";
-import { Profile } from "@screens/Profile";
-import { Cart } from "@screens/Cart";
+import Profile from "@screens/Profile";
+import Cart from "@screens/Cart";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons } from "@expo/vector-icons";
 
